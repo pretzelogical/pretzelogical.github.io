@@ -4,7 +4,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-flow: column;
   margin: 0 auto;
+  height: 100vh;
   width: 100%;
   max-width: 80ch;
   padding: 1rem;
@@ -18,4 +21,8 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+footer {
+  margin-top: auto
 }
