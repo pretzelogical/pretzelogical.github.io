@@ -1,4 +1,6 @@
 ---
+import '../global.css';
+import Navigation from '../components/Navigation.astro';
 const pageTitle = "Home";
 ---
 
@@ -12,10 +14,6 @@ const pageTitle = "Home";
 	</head>
 	<body>
 		<h1>Pretzelnet</h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/blog">Blog</a>
-		</nav>
+		<Navigation />
 	</body>
 </html>
