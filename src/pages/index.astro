@@ -11,14 +11,15 @@ const pageTitle = "Home";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<script src="../scripts/hamburger.js"></script>
 		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<header>
-			<h1>Pretzelnet</h1>
+			<Navigation />
 		</header>
 		<main>
-			<Navigation />
+			<h1>Pretzelnet</h1>
 		</main>
 		<Footer />
 	</body>

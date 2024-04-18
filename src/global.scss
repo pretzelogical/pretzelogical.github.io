@@ -35,7 +35,7 @@ $md-breakpoint: 636px;
   width: 100%;
   top: 5rem;
   left: 48px;
-  // display: none;
+  display: none;
   margin: 0;
   a {
     display: block;
@@ -46,28 +46,29 @@ $md-breakpoint: 636px;
     font-weight: bold;
     text-transform: uppercase;
     color: #151414;
+    border-radius: 4px;
   }
-  a:hover {
-    background-color: #7265d4;
-  }
-  a:focus {
+  a:hover, a:focus {
+    color: #f1f5f9;
     background-color: #7265d4;
   }
   @media screen and (min-width: $md-breakpoint) {
     & {
-      .nav-links {
-        margin-left: 5em;
-        display: block;
-        position: static;
-        width: auto;
-        background: none;
-      }
+      margin-left: 5em;
+      display: block;
+      position: static;
+      width: auto;
+      background: none;
     }
     & a {
       display: inline-block;
       padding: 15px 20px;
     }
   }
+}
+
+.expanded {
+  display: unset;
 }
 
 // Hamburger menu
