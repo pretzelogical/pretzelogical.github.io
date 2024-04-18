@@ -14,7 +14,13 @@ const { frontmatter } = Astro.props;
     <summary>Post Info</summary>
     <ul>
       <li>
+        Description: {frontmatter.description}
+      </li>
+      <li>
         Published: {frontmatter.pubDate.toString().slice(0, 10)}
+      </li>
+      <li>
+        Tags: {frontmatter.tags.toString().replace(',', ', ')}
       </li>
     </ul>
   </details>
