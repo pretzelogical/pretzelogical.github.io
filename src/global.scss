@@ -27,6 +27,11 @@ footer {
   margin-top: auto
 }
 
+ul li::marker {
+  content: '- ';
+  font-weight: bold;
+}
+
 // Breakpoints
 $md-breakpoint: 636px;
 
@@ -90,3 +95,17 @@ $md-breakpoint: 636px;
   }
 }
 
+// Details
+
+details {
+  border: 2px solid #d4d4d4;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: fit-content;
+  &[open] {
+    width: auto;
+  }
+  summary {
+    cursor: pointer;
+  }
+}

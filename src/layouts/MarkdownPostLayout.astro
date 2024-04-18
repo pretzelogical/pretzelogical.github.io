@@ -1,0 +1,23 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../global.css';
+const { frontmatter } = Astro.props;
+---
+
+<header>
+  <Navigation />
+</header>
+<main>
+  <h1>{frontmatter.title}</h1>
+  <details>
+    <summary>Post Info</summary>
+    <ul>
+      <li>
+        Published: {frontmatter.pubDate.toString().slice(0, 10)}
+      </li>
+    </ul>
+  </details>
+  <slot />
+</main>
+<Footer />

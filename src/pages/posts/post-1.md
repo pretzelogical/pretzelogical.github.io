@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Test blog post'
 author: 'pretzelogic'
 pubDate: 2024-04-13
@@ -8,10 +9,6 @@ image:
   alt: 'The Full Astro logo.'
 tags: ["awesome", "test"]
 ---
-
-# Test blog post
-
-Published on: 2024-04-13
 
 This is a test post that _I_ am _creating_ to help me learn about astro
 
