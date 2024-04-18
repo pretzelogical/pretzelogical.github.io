@@ -24,5 +24,60 @@ h1 {
 }
 
 footer {
-  margin-top: auto
+  margin-top: auto;
 }
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  margin: 0;
+}
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #151414;
+}
+.nav-links a:hover {
+  background-color: #7265d4;
+}
+.nav-links a:focus {
+  background-color: #7265d4;
+}
+@media screen and (min-width: 636px) {
+  .nav-links .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+}
+
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #151414;
+}
+@media screen and (min-width: 636px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */
