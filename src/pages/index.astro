@@ -1,26 +1,8 @@
 ---
-import '../global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<script src="../scripts/hamburger.js"></script>
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<header>
-			<Navigation />
-		</header>
-		<main>
-			<h1>Pretzelnet</h1>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>Subtitle ploxx</h2>
+</BaseLayout>
