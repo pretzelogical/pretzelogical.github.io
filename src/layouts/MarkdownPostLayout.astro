@@ -1,15 +1,10 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from './BaseLayout.astro';
 import '../global.css';
 const { frontmatter } = Astro.props;
 ---
 
-<header>
-  <Navigation />
-</header>
-<main>
-  <h1>{frontmatter.title}</h1>
+<BaseLayout pageTitle={frontmatter.title}>
   <details>
     <summary>Post Info</summary>
     <ul>
@@ -25,5 +20,4 @@ const { frontmatter } = Astro.props;
     </ul>
   </details>
   <slot />
-</main>
-<Footer />
+</BaseLayout>
