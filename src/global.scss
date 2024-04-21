@@ -1,5 +1,20 @@
+// Breakpoints
+$sm-breakpoint: 481px;
+$md-breakpoint: 961px;
+
+// Colors
+$default-border: #d4d4d4;
+$bg-color: #f1f5f9;
+
+$hover-color: #7265d4;
+$active-color: #aea6ef;
+
+:root {
+  --hover-color: #{$hover-color};
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: $bg-color;
   font-family: sans-serif;
 }
 
@@ -10,8 +25,12 @@ body {
   height: 100vh;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
+  padding: 16px;
   line-height: 1.5;
+  @media screen and (min-width: $md-breakpoint) {
+    max-width: 160ch;
+    padding: 0 32px;
+  }
 }
 
 * {
@@ -32,50 +51,61 @@ ul li::marker {
   font-weight: bold;
 }
 
-// Breakpoints
-$sm-breakpoint: 636px;
-
-// Colors
-$default-border: #d4d4d4;
 
 // Nav links
 .nav-links {
   width: 100%;
   top: 5rem;
-  left: 48px;
   display: none;
   margin: 0;
-  a {
-    display: block;
-    text-align: center;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #151414;
-    border: 2px solid $default-border;
-    border-radius: 4px;
-    line-height: 40px;
+  ul {
+    padding-left: 0;
+    li::marker {
+      content: none;
+    }
+    li a {
+      display: block;
+      text-align: center;
+      padding: 5px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #151414;
+      border: 2px solid $default-border;
+      border-radius: 4px;
+      line-height: 40px;
+    }
   }
-  a:hover, a:focus {
-    background-color: #7265d4;
-  }
-  a:active {
-    background-color: #aea6ef;
+  ul li a {
+    &:hover {
+      background-color: $hover-color;
+    }
+    &:active {
+      background-color: $active-color;
+    }
   }
   @media screen and (min-width: $sm-breakpoint) {
     & {
-      margin-left: 5em;
+      width: auto;
       display: block;
       position: static;
-      width: auto;
-      background: none;
     }
-    & a {
-      display: inline-block;
-      padding: 15px 25px;
-      line-height: normal;
+    & ul {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 4px;
+      align-items: center;
+      background: none;
+      li a {
+        display: inline-block;
+        padding: 15px 25px;
+        line-height: normal;
+        justify-self: end;
+        &.nav-links__home {
+          justify-self: start;
+        }
+      }
     }
   }
 }
@@ -131,7 +161,7 @@ details {
     border: 2px solid $default-border;
     border-radius: 10px;
     &:hover {
-      background-color: #7265d4;
+      background-color: $hover-color;
     }
   }
   li::marker {
