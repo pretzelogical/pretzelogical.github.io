@@ -42,17 +42,21 @@ ul li::marker {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #151414;
+  border: 2px solid #d4d4d4;
   border-radius: 4px;
+  line-height: 40px;
 }
 .nav-links a:hover, .nav-links a:focus {
-  color: #f1f5f9;
   background-color: #7265d4;
+}
+.nav-links a:active {
+  background-color: #aea6ef;
 }
 @media screen and (min-width: 636px) {
   .nav-links {
@@ -64,7 +68,8 @@ ul li::marker {
   }
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 15px 25px;
+    line-height: normal;
   }
 }
 
@@ -101,6 +106,20 @@ details[open] {
 }
 details summary {
   cursor: pointer;
+}
+
+footer ul {
+  padding: 0;
+}
+footer ul li a img {
+  border: 2px solid #d4d4d4;
+  border-radius: 10px;
+}
+footer ul li a img:hover {
+  background-color: #7265d4;
+}
+footer ul li::marker {
+  content: none;
 }
 
 /*# sourceMappingURL=global.css.map */

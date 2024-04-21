@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
         Published: {frontmatter.pubDate.toString().slice(0, 10)}
       </li>
       <li>
-        Tags: {frontmatter.tags.toString().replace(',', ', ')}
+        Tags: {frontmatter.tags.toString().replaceAll(',', ', ')}
       </li>
     </ul>
   </details>

@@ -35,6 +35,9 @@ ul li::marker {
 // Breakpoints
 $sm-breakpoint: 636px;
 
+// Colors
+$default-border: #d4d4d4;
+
 // Nav links
 .nav-links {
   width: 100%;
@@ -45,17 +48,21 @@ $sm-breakpoint: 636px;
   a {
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #151414;
+    border: 2px solid $default-border;
     border-radius: 4px;
+    line-height: 40px;
   }
   a:hover, a:focus {
-    color: #f1f5f9;
     background-color: #7265d4;
+  }
+  a:active {
+    background-color: #aea6ef;
   }
   @media screen and (min-width: $sm-breakpoint) {
     & {
@@ -67,7 +74,8 @@ $sm-breakpoint: 636px;
     }
     & a {
       display: inline-block;
-      padding: 15px 20px;
+      padding: 15px 25px;
+      line-height: normal;
     }
   }
 }
@@ -98,7 +106,7 @@ $sm-breakpoint: 636px;
 // Details
 
 details {
-  border: 2px solid #d4d4d4;
+  border: 2px solid $default-border;
   border-radius: 4px;
   padding: 0.5rem;
   margin: 0.5rem 0;
@@ -108,5 +116,21 @@ details {
   }
   summary {
     cursor: pointer;
+  }
+}
+
+// Footer
+
+footer ul {
+  padding: 0;
+  li a img {
+    border: 2px solid $default-border;
+    border-radius: 10px;
+    &:hover {
+      background-color: #7265d4;
+    }
+  }
+  li::marker {
+    content: none;
   }
 }
