@@ -119,10 +119,14 @@ details {
   }
 }
 
-// Footer
+// Social links
 
-footer ul {
+#social-links ul {
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: 4px;
   li a img {
     border: 2px solid $default-border;
     border-radius: 10px;
