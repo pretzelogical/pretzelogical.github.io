@@ -67,6 +67,7 @@ ul li::marker {
       display: block;
       text-align: center;
       padding: 5px;
+      margin: 6px 0;
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
@@ -92,13 +93,10 @@ ul li::marker {
       gap: 4px;
       align-items: center;
       li a {
+        margin: 0;
         display: inline-block;
         padding: 15px 25px;
         line-height: normal;
-        justify-self: end;
-        &.nav-links__home {
-          justify-self: start;
-        }
       }
     }
   }
