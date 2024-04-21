@@ -77,14 +77,12 @@ ul li::marker {
   .nav-links {
     width: auto;
     display: block;
-    position: static;
   }
   .nav-links ul {
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 4px;
     align-items: center;
-    background: none;
   }
   .nav-links ul li a {
     display: inline-block;

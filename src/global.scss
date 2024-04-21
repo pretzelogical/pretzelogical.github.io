@@ -75,28 +75,22 @@ ul li::marker {
       border: 2px solid $default-border;
       border-radius: 4px;
       line-height: 40px;
-    }
-  }
-  ul li a {
-    &:hover {
-      background-color: $hover-color;
-    }
-    &:active {
-      background-color: $active-color;
+      &:hover {
+        background-color: $hover-color;
+      }
+      &:active {
+        background-color: $active-color;
+      }
     }
   }
   @media screen and (min-width: $sm-breakpoint) {
-    & {
-      width: auto;
-      display: block;
-      position: static;
-    }
-    & ul {
+    width: auto;
+    display: block;
+    ul {
       display: grid;
       grid-template-columns: 1fr auto auto;
       gap: 4px;
       align-items: center;
-      background: none;
       li a {
         display: inline-block;
         padding: 15px 25px;
