@@ -1,12 +1,52 @@
 ---
+import { custom } from "astro/zod";
 import Hamburger from "../Hamburger.astro";
 import NavLink from "./NavLink.astro";
+
+type PagesType = {
+  [key: string]: {
+    href: string,
+    customClasses?: string
+  }
+}
+
+/**
+ * Generates the links for the navigation
+ */
+function generateLinks() {
+  const pages = {
+    "Home": {
+      href: "/",
+      customClasses: "mr-auto"
+    },
+    "Projects": {
+      href: "/projects",
+      customClasses: "mr-2"
+    },
+    "Blog": {
+      href: "/blog",
+    },
+  } as PagesType
+  const pageTitle = Astro.props.pageTitle;
+  const links = {};
+  for (const [key, value] of Object.entries(pages as PagesType)) {
+    if (key === pageTitle) {
+      value.customClasses += " font-bold";
+      links[key] = value;
+    } else {
+      links[key] = value;
+    }
+  }
+  return links;
+}
+
+const links = generateLinks();
 ---
 <Hamburger />
 <nav>
   <ul class="flex flex-row justify-end">
-    <NavLink customClasses="mr-auto" href="/">Home</NavLink>
-    <NavLink customClasses="mr-2" href="/about">About</NavLink>
-    <NavLink href="/projects">Projects</NavLink>
+    {Object.entries(links as PagesType).map(([key, value]) => (
+      <NavLink href={value.href} customClasses={value.customClasses}>{key}</NavLink>
+    ))}
   </ul>
 </nav>

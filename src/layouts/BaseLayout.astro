@@ -19,9 +19,9 @@ const { pageTitle } = Astro.props;
 		class="flex flex-col my-auto mx-0 px-60"
 	>
 		<header>
-			<Navigation />
+			<Navigation pageTitle={pageTitle} />
 		</header>
-		<main>
+		<main class="flex flex-col lg:px-24">
 			<h1>{pageTitle}</h1>
       <slot />
 		</main>
