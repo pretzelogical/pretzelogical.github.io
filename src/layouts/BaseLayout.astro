@@ -1,5 +1,5 @@
 ---
-// import '../global.scss';
+import '../base.css';
 import Navigation from '../components/Navigation/Navigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 const { pageTitle } = Astro.props;
@@ -22,10 +22,10 @@ const { pageTitle } = Astro.props;
 			<Navigation pageTitle={pageTitle} />
 		</header>
 		<main class="flex flex-col lg:px-24">
-			<h1>{pageTitle}</h1>
+			<h1 class="text-3xl py-10">{pageTitle}</h1>
       <slot />
 		</main>
-		<footer>
+		<footer class="absolute bottom-2 right-20">
 			<SocialLinks />
 		</footer>
 	</body>
