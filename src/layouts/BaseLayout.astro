@@ -1,6 +1,6 @@
 ---
-import '../global.scss';
-import Navigation from '../components/Navigation.astro';
+// import '../global.scss';
+import Navigation from '../components/Navigation/Navigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 const { pageTitle } = Astro.props;
 ---
@@ -15,7 +15,9 @@ const { pageTitle } = Astro.props;
 		<script src="../scripts/footer.js"></script>
 		<title>{pageTitle}</title>
 	</head>
-	<body>
+	<body
+		class="flex flex-col my-auto mx-0 px-60"
+	>
 		<header>
 			<Navigation />
 		</header>

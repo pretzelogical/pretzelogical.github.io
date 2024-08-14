@@ -1,0 +1,7 @@
+---
+const { href, customClasses = "" } = Astro.props;
+---
+
+<li class={"border-2 border-t-0 border-zinc-500 p-2 " + customClasses}>
+  <a href={href}><slot /></a>
+</li>

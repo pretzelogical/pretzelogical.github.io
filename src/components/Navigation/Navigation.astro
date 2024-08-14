@@ -1,0 +1,12 @@
+---
+import Hamburger from "../Hamburger.astro";
+import NavLink from "./NavLink.astro";
+---
+<Hamburger />
+<nav>
+  <ul class="flex flex-row justify-end">
+    <NavLink customClasses="mr-auto" href="/">Home</NavLink>
+    <NavLink customClasses="mr-2" href="/about">About</NavLink>
+    <NavLink href="/projects">Projects</NavLink>
+  </ul>
+</nav>

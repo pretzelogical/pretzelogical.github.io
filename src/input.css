@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    max-width: 80ch;
+    padding: 16px;
+    line-height: 1.5;
+  }
+  @media screen and (min-width: 961px) {
+    body {
+      max-width: 160ch;
+      padding: 0 32px;
+    }
+  }
+}
