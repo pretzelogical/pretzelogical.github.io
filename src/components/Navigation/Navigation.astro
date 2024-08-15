@@ -2,50 +2,49 @@
 import Hamburger from "../Hamburger.astro";
 import NavLink from "./NavLink.astro";
 
-type PagesType = {
-  [key: string]: {
+const { navIndex = 0 } = Astro.props;
+
+type NavLinksType = Array<
+  {
     isActive: boolean,
     href: string,
-    customClasses?: string,
     navName: string,
+    customClasses?: string,
     customStyles?: string
   }
-}
+>
 
 /**
  * Generates the links for the navigation
  */
-function generateLinks(): PagesType {
-  const pages = {
-    "Home": {
+function generateLinks(): NavLinksType {
+  const pages = [
+    {
       href: "/",
       customClasses: "mr-auto",
       navName: "Home",
       isActive: false
     },
-    "Projects": {
+    {
       href: "/projects",
       customClasses: "mr-2",
       navName: "Projects",
       isActive: false
     },
-    "Blog": {
+    {
       href: "/blog",
       navName: "Blog",
       isActive: false
     },
-  } as PagesType
-  const pageTitle = Astro.props.pageTitle;
-  const links = {};
-  for (const [key, value] of Object.entries(pages as PagesType)) {
-    if (key === pageTitle) {
-      value.isActive = true;
-      links[key] = value;
+  ] as NavLinksType
+  for (let i = 0; i < pages.length; i++) {
+    if (i === navIndex) {
+      pages[i].isActive = true;
     } else {
-      links[key] = value;
+      pages[i].isActive = false;
     }
   }
-  return links;
+  return pages;
 }
 
 const links = generateLinks();
@@ -53,7 +52,7 @@ const links = generateLinks();
 <Hamburger />
 <nav>
   <ul class="flex flex-row justify-end">
-    {Object.entries(links as PagesType).map(([key, value]) => (
+    {(links as NavLinksType).map((value) => (
       <NavLink
         href={value.href}
         customClasses={value.customClasses}
