@@ -5,7 +5,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/pretzelnet/favicon.svg" />
@@ -16,16 +16,16 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body
-		class="flex flex-col my-auto mx-0"
+		class="flex flex-col my-auto mx-0 h-full"
 	>
 		<header class="px-4 lg:px-44">
 			<Navigation pageTitle={pageTitle} />
 		</header>
-		<main class="flex flex-col lg:px-60 px-4">
+		<main class="flex flex-col lg:px-60 px-4 mb-auto">
 			<h1 class="text-3xl py-10">{pageTitle}</h1>
       <slot />
 		</main>
-		<footer class="absolute bottom-2 lg:right-40 right-2">
+		<footer class="sticky bottom-2">
 			<SocialLinks />
 		</footer>
 	</body>
