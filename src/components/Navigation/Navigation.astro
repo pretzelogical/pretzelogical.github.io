@@ -1,37 +1,45 @@
 ---
-import { custom } from "astro/zod";
 import Hamburger from "../Hamburger.astro";
 import NavLink from "./NavLink.astro";
 
 type PagesType = {
   [key: string]: {
+    isActive: boolean,
     href: string,
-    customClasses?: string
+    customClasses?: string,
+    navName: string,
+    customStyles?: string
   }
 }
 
 /**
  * Generates the links for the navigation
  */
-function generateLinks() {
+function generateLinks(): PagesType {
   const pages = {
     "Home": {
       href: "/",
-      customClasses: "mr-auto"
+      customClasses: "mr-auto",
+      navName: "Home",
+      isActive: false
     },
     "Projects": {
       href: "/projects",
-      customClasses: "mr-2"
+      customClasses: "mr-2",
+      navName: "Projects",
+      isActive: false
     },
     "Blog": {
       href: "/blog",
+      navName: "Blog",
+      isActive: false
     },
   } as PagesType
   const pageTitle = Astro.props.pageTitle;
   const links = {};
   for (const [key, value] of Object.entries(pages as PagesType)) {
     if (key === pageTitle) {
-      value.customClasses += " font-bold";
+      value.isActive = true;
       links[key] = value;
     } else {
       links[key] = value;
@@ -46,7 +54,13 @@ const links = generateLinks();
 <nav>
   <ul class="flex flex-row justify-end">
     {Object.entries(links as PagesType).map(([key, value]) => (
-      <NavLink href={value.href} customClasses={value.customClasses}>{key}</NavLink>
+      <NavLink
+        href={value.href}
+        customClasses={value.customClasses}
+        customStyles={value.customStyles ? value.customStyles : ''}
+        isActive={value.isActive}
+        >{value.navName}
+      </NavLink>
     ))}
   </ul>
 </nav>

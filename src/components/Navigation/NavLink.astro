@@ -1,7 +1,21 @@
 ---
-const { href, customClasses = "" } = Astro.props;
+const {
+  href,
+  customClasses = '',
+  customStyles = '',
+  isActive = false,
+} = Astro.props;
 ---
 
-<li class={"border-2 border-t-0 border-zinc-500 p-2 " + customClasses}>
+<li
+  class={
+  'border-2 border-t-0 border-zinc-500 p-2 rounded-b-md ' +
+    (isActive
+      ? 'font-bold shadow-none bg-zinc-500 text-white '
+      : 'shadow-lg ') +
+    customClasses
+  }
+  style={(isActive ? 'b' : '') + customStyles}
+>
   <a href={href}><slot /></a>
 </li>
