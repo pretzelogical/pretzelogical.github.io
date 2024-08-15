@@ -12,10 +12,10 @@ const {
   'border-2 border-t-0 border-zinc-500 p-2 rounded-b-md ' +
     (isActive
       ? 'font-bold shadow-none bg-zinc-500 text-white '
-      : 'shadow-lg ') +
+      : 'shadow-lg bg-white ') +
     customClasses
   }
-  style={(isActive ? 'b' : '') + customStyles}
+  style={customStyles}
 >
   <a href={href}><slot /></a>
 </li>
