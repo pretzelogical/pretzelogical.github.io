@@ -1,9 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 const pageTitle = 'Home';
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<HomeLayout pageTitle={pageTitle}>
+  <!-- <div class="h-dvh bg-blue-400">
+    <p>This should take up the whole screen.</p>
+  </div> -->
   <h2>Hello! I am a Full Stack Web Dev from Oklahoma!</h2>
 
   <p>This site is currently being worked on so expect big changes!</p>
@@ -31,4 +35,4 @@ const pageTitle = 'Home';
       />
     </div>
   </div>
-</BaseLayout>
+</HomeLayout>
