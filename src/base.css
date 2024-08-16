@@ -4,8 +4,5 @@
 
 
 @layer base {
-  @font-face {
-    font-family: 'Drive Thru';
-    src: url('/font/drive-thru.ttf') format('truetype');
-  }
+  
 }

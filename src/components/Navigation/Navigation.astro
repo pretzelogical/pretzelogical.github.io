@@ -23,7 +23,6 @@ function generateLinks(): NavLinksType {
     },
     {
       href: '/projects',
-      customClasses: 'mr-2',
       navName: 'Projects',
       isActive: false,
     },
@@ -48,7 +47,7 @@ const links = generateLinks();
 
 <nav>
   <ul class="flex flex-row justify-end backdrop-blur-sm">
-    <li class="mx-auto">
+    <li class="mr-auto">
       <a href="/">
         <img
           src="/img/pretzelnet-logo.png"
@@ -59,17 +58,19 @@ const links = generateLinks();
         />
       </a>
     </li>
-    {
-      (links as NavLinksType).map((value) => (
-        <NavLink
-          href={value.href}
-          customClasses={value.customClasses}
-          customStyles={value.customStyles ? value.customStyles : ''}
-          isActive={value.isActive}
-        >
-          {value.navName}
-        </NavLink>
-      ))
-    }
+    <div class="flex flex-row">
+      {
+        (links as NavLinksType).map((value) => (
+          <NavLink
+            href={value.href}
+            customClasses={value.customClasses}
+            customStyles={value.customStyles ? value.customStyles : ''}
+            isActive={value.isActive}
+          >
+            {value.navName}
+          </NavLink>
+        ))
+      }
+    </div>
   </ul>
 </nav>
