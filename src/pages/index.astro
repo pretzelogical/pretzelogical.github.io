@@ -1,13 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = 'Home';
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout customBodyClass="bg-purple-400">
+  <div class="flex flex-col items-center">
+    <img
+      class="max-w-3xl max-h-full"
+      src="/img/pretzel-parlor-logo.png"
+      alt="Pretzel parlor logo"
+    />
+  </div>
   <h2>Hello! I am a Full Stack Web Dev from Oklahoma!</h2>
-
   <p>This site is currently being worked on so expect big changes!</p>
-  <div style="display: flex; align-items: center; justify-content: center; margin: 160px 0px;">
+  <div
+    style="display: flex; align-items: center; justify-content: center; margin: 160px 0px;"
+  >
     <div
       style="text-align: center; border: 2px solid #d4d4d4; border-radius: 4px; display: flex; align-items: center; justify-content: center; width: fit-content"
     >
