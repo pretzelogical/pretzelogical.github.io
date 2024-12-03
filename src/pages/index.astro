@@ -3,17 +3,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
 ---
 
-<BaseLayout customBodyClass="bg-purple-400">
-  <div class="flex flex-col items-center">
+<BaseLayout customBodyClass="bg-purple-300 dark:bg-fuchsia-900">
+  <div
+    class="flex flex-col items-center dark:bg-purple-400 py-10"
+    style="
+      --mask: conic-gradient(from -40deg at bottom,#0000,#000 1deg 79deg,#0000 80deg) 50%/50.35px 100%;
+      -webkit-mask: var(--mask);
+      mask: var(--mask);"
+  >
     <img
       class="max-w-3xl max-h-full"
       src="/img/pretzel-parlor-logo.png"
       alt="Pretzel parlor logo"
     />
+    <p class="text-xl"><span class="font-bold">MOTM:</span> How bout that for a dollar?</p>
   </div>
-  <h2>Hello! I am a Full Stack Web Dev from Oklahoma!</h2>
-  <p>This site is currently being worked on so expect big changes!</p>
-  <div
+  <!-- <div
     style="display: flex; align-items: center; justify-content: center; margin: 160px 0px;"
   >
     <div
@@ -38,5 +43,5 @@ const pageTitle = "Home";
         height="100"
       />
     </div>
-  </div>
+  </div> -->
 </BaseLayout>
