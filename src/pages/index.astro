@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Button from "../components/Button.astro";
+import NavLinkCollection from "../components/Navigation/NavLinkCollection.astro";
 const pageTitle = "Home";
 ---
 
@@ -18,18 +18,12 @@ const pageTitle = "Home";
         src="/img/pretzel-parlor-logo.png"
         alt="Pretzel parlor logo"
       />
-      <p class="text-xl my-10">
+      <p class="text-xl my-10 font-mono">
         <span class="font-bold">MOTM(12-2024):</span> How bout that for a dollar?
       </p>
     </div>
     <nav>
-      <ul class="flex">
-        <li>
-          <Button>
-            <p><a href="/blog">Blog</a></p>
-          </Button>
-        </li>
-      </ul>
+      <NavLinkCollection />
     </nav>
   </div>
   <!-- <div
