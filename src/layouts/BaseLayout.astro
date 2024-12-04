@@ -2,7 +2,12 @@
 import '../base.css';
 import Navigation from '../components/Navigation/Navigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-const { pageTitle = "", navIndex = 0, customBodyClass = "" } = Astro.props;
+const {
+	pageTitle = "",
+	navIndex = 0,
+	customBodyClass = "",
+	hideNav = false
+	} = Astro.props;
 ---
 
 <html lang="en" class="h-full">
@@ -19,14 +24,17 @@ const { pageTitle = "", navIndex = 0, customBodyClass = "" } = Astro.props;
 		class=`flex flex-col my-auto mx-0 h-full ${customBodyClass}`
 	>
 		<header class="px-1 lg:pr-24 lg:pl-40 sticky top-5 z-50">
-			<Navigation pageTitle={pageTitle} navIndex={navIndex} />
+			{hideNav ? null : <Navigation pageTitle={pageTitle} navIndex={navIndex} /> }
 		</header>
-		<main class="flex flex-col lg:px-60 px-4 mb-auto pt-5">
+		<main
+			class=`flex flex-col lg:px-60 px-4 mb-auto
+				${hideNav ? "" : "pt-5"}`
+		>
 			{ pageTitle === "" ? null : <h1 class="text-3xl py-10">{pageTitle}</h1>}
       <slot />
 		</main>
 		<footer class="sticky bottom-2">
-			<SocialLinks />
+			{hideNav ? null : <SocialLinks />}
 		</footer>
 	</body>
 </html>

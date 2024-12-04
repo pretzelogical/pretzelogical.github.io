@@ -1,22 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
 const pageTitle = "Home";
 ---
 
-<BaseLayout customBodyClass="bg-purple-300 dark:bg-fuchsia-900">
+<BaseLayout customBodyClass="bg-purple-300 dark:bg-fuchsia-900" hideNav={true}>
   <div
-    class="flex flex-col items-center dark:bg-purple-400 py-10"
+    class="flex flex-col items-center bg-fuchsia-900 dark:bg-purple-400 py-64"
     style="
-      --mask: conic-gradient(from -40deg at bottom,#0000,#000 1deg 79deg,#0000 80deg) 50%/50.35px 100%;
+      --mask: conic-gradient(from -47.5deg at bottom,#0000,#000 1deg 94deg,#0000 95deg) 50%/65.48px 100%;
       -webkit-mask: var(--mask);
       mask: var(--mask);"
   >
-    <img
-      class="max-w-3xl max-h-full"
-      src="/img/pretzel-parlor-logo.png"
-      alt="Pretzel parlor logo"
-    />
-    <p class="text-xl"><span class="font-bold">MOTM:</span> How bout that for a dollar?</p>
+    <div class="flex flex-col items-center">
+      <img
+        class="max-w-3xl max-h-full"
+        src="/img/pretzel-parlor-logo.png"
+        alt="Pretzel parlor logo"
+      />
+      <p class="text-xl my-10">
+        <span class="font-bold">MOTM(12-2024):</span> How bout that for a dollar?
+      </p>
+    </div>
+    <nav>
+      <ul class="flex">
+        <li>
+          <Button>
+            <p><a href="/blog">Blog</a></p>
+          </Button>
+        </li>
+      </ul>
+    </nav>
   </div>
   <!-- <div
     style="display: flex; align-items: center; justify-content: center; margin: 160px 0px;"
